@@ -15,6 +15,7 @@ activate the .venv and export WAVEFLOW_VITIS_PATH=/eda/xilinx/2026.1/Vitis/bin/v
 copy the output of the C simulation and logs back to this folder for comparision.
 
 Operation All samples and parameters are 32-bit floats. For each sample x, we check if x is less than lo, Then y is equal to lo, which is clipped. If x is greater than hi, then y is equal to hi, which is clipped. If both are false, then y is equal to x, where nothing is clipped. The clipped count is an unsigned 32-bit integer that carries across the data commands Config replaces lo and hi and sets the count to 0.
+Use the exactly same comparison in this order. a NaN sample will fail both. So this will make it pass through with its bits unchanged and not clipped. The count will wrap to modulo 2^32
 
 Commands
 CONFIG(lo, hi): no response
@@ -24,7 +25,9 @@ END: no response; the kernel returns
 lo and hi must not be NaN, and lo <= hi. nsamp is from 1 to 1024.
 
 errors
-eport errors in the status registers and follow the pattern. Check in this particular order and this particular order only. So the whenever the first one is applied, First, check for unknown commands or check for data or count before any config in this activation, or check if there is an invalid LO, HI or NSAMP. If any of these three errors occur, send nothing for that command. And then you can check for tlast, like early tlast on a data sample before any sample NSAMP. If this is the case, then write the sample that carried the tlast and the last output word with the tlast, or check if the tlast is missing. For this error, you can just write all NSAMP output samples with tlast on the last.
+On every error, the kernel will set a status register like halted, error code, offending, TXID. Close any output burst, which started with tlast written at once without reading more inputs.
+After this, check this in this particular order. Whichever these the first that applies wins.
+Number one is unknown command. Number two is data or count before config in this activation. Number three is invalid, lo, hi, or nsamp. If the error is any one of these, then no output burst was started. So send nothing for this command. Check if the D last was early. If that's the case, the sample that carried D last is the one last one processed, and its output what carries the D last. So send it again. If the D last is missing, then the T last error was detected at the sample and samp. So the sample's output word carries the last T last.
 
 verification
 check the Python model against hand computed examples and run this in particular order.
