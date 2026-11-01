@@ -10,7 +10,7 @@ All files are on this local folder. Do not commit. For the Python model, run it 
 
 For the C simulation, because Vitis is not on this Mac, I usually run it on the ECS servers. The following is information that you need.
 ecs03.poly.edu with user km6152
-copy the folder cmdresp_inclass on the server and run ssh km6152@ecs03.poly.edu bash -s with a heredoc
+activate ~/ECE_6463/.venv and export WAVEFLOW_VITIS_PATH=/eda/xilinx/2026.1/Vitis/bin/vitis-run
 activate the .venv and export WAVEFLOW_VITIS_PATH=/eda/xilinx/2026.1/Vitis/bin/vitis-run
 copy the output of the C simulation and logs back to this folder for comparision.
 
