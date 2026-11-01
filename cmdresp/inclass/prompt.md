@@ -25,9 +25,9 @@ END: no response; the kernel returns
 lo and hi must not be NaN, and lo <= hi. nsamp is from 1 to 1024.
 
 errors
-On every error, the kernel will set a status register like halted, error code, offending, TXID. Close any output burst, which started with tlast written at once without reading more inputs.
+On every error, the kernel will set the status registers: halted, error code, offending TXID. Close any output burst which started with TLAST and return at once without reading more inputs.
 After this, check this in this particular order. Whichever these the first that applies wins.
-Number one is unknown command. Number two is data or count before config in this activation. Number three is invalid, lo, hi, or nsamp. If the error is any one of these, then no output burst was started. So send nothing for this command. Check if the D last was early. If that's the case, the sample that carried D last is the one last one processed, and its output what carries the D last. So send it again. If the D last is missing, then the T last error was detected at the sample and samp. So the sample's output word carries the last T last.
+Number one is unknown command. Number two is data or count before config in this activation. Number three is invalid, lo, hi, or nsamp. If the error is any one of these, then no output burst was started. So send nothing for this command. Number four, check if the TLAST was early. If that's the case, the sample that carried TLAST is the last one processed, and its output word carries the TLAST. Number five, if the TLAST is missing, then the TLAST error was detected at sample nsamp. So that sample's output word carries the TLAST.
 
 verification
 check the Python model against hand computed examples and run this in particular order.
