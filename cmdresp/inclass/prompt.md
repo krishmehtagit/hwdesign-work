@@ -40,4 +40,4 @@ lo == hi, NaN and -0.0
 each error in its own activation, followed by a fresh activation with fresh streams that must pass
 
 results.md
-Include a table of every scenario with PASS or FAIL, and a list of every place this prompt was silent or ambiguous and what you chose.
+Include a table of every scenario with a pass or fail, which shows that Python model and C simulation agrees for bit by bit. Include the error scenarios and the fresh activations after them. For each result, name the log or output file it came from and keep the file in this folder. Also, list every place this prompt was silent for or ambiguous and what you chose after that.
