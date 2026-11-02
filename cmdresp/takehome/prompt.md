@@ -95,7 +95,7 @@ this folder to be committed: a reviewer opens them to check results.md.
 | Version | Change | Why |
 | --- | --- | --- |
 | 1 | First version | |
-| 2 | Commands and valid values section | Prompt gave no command list, so run 1 would have guessed them, run 1 built this list, its fix after llm grader asks for it |
+| 2 | Commands and valid values section | Prompt gave no command list, so run 1 would have guessed them, run 1 built this list|
 | 3 | All scenarios in every check; error codes 1 to 7 | Run 1 Open Items |
 | 4 | DATA loops nsamp times and no response on sample TLAST errors; new CONFIG and added two error tests | Run 2 took 8,763 cycles for 1-sample DATA, sent a header before errors 6 and 7 and reused CONFIG values |
 | 5 | DATA loop bound fixed | Run 3 still looped to 4096 |
