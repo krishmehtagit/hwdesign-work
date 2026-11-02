@@ -63,6 +63,7 @@ Error codes: 1 early header TLAST, 2 missing header TLAST, 3 unknown command, 4 
 Run every scenario in the Python model, C simulation and co-simulation. Report accepted samples per clock from co-simulation.
 
 The second CONFIG test must change lo, shift and nbins. Test two errors at once to confirm the order.
+An invalid CONFIG changes nothing. With no first header word, the kernel waits.
 
 ## results.md
 Write results.md with these sections:
@@ -94,6 +95,8 @@ this folder to be committed: a reviewer opens them to check results.md.
 | Version | Change | Why |
 | --- | --- | --- |
 | 1 | First version | |
-|2|commands section| 2nd for llm grader fix|
-| 3 | Every scenario runs in the model, C simulation and co-simulation and error codes 1 to 7 are fixed | Run 1 left these in Open Items asnd co-simulated only the timing scenario |
+|2|commands section| 2nd for llm grader fix, Run 1 built them|
+| 3 | All scenarios in every check; error codes 1 to 7 | Run 1 Open Items |
 | 4 | DATA loops nsamp times, no response on sample TLAST errors, new CONFIG and two-error tests | Problems found in run 2 |
+| 5 | DATA loop bound fixed | Run 3 still looped to 4096 |
+| 6 | Invalid CONFIG and no first header word settled | Run 4 Assumptions, I kept its choices |

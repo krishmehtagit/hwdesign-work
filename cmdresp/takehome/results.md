@@ -89,7 +89,7 @@ The saved intent, expected, model, CSim, and cosim bundles are in
 - An early header TLAST stops before reading following header words; tx_id is
   available in word 0.
 - Bad CONFIG does not change an existing configuration; every error scenario
-  here is a fresh activation.
+  here is a fresh activation.  Settled as a requirement in prompt v6.
 - For malformed parameter commands, unconsumed payload is deliberately
   discarded by the testbench reset, as required after a halt.
 - An early/missing sample TLAST processes only received samples for state
@@ -100,8 +100,8 @@ The saved intent, expected, model, CSim, and cosim bundles are in
   fields, END fields, response ordering after a fatal error, or status reset
   cycle; they are serialized as zero by the scenario helper, fatal runs emit
   no new response, and status is observable after return.
-- The prompt does not specify behavior when a header stream ends before even
-  word zero; that blocking transport condition is not generated.
+- With no first header word, the kernel waits at the stream read; this
+  condition is not generated.  Settled as a requirement in prompt v6.
 
 ## Open Items
 
@@ -115,3 +115,4 @@ The throughput target is **FAIL** (achieved II=2).  No other open items.
 | v3 | Added all fixed error codes, invalid parameters, fresh-after-error activations, NumPy/hand oracle, and one full-suite cosim run | 29/29 model, CSim, and cosim exact PASS; II=2 FAIL; 9.060 ns clock PASS |
 | v4 | DATA TLAST errors suppress DATA responses; second CONFIG changes all configuration fields; added combined-error precedence tests | 33/33 model, CSim, and cosim exact PASS; II=2 FAIL; 9.060 ns clock PASS |
 | v5 | Changed only DATA-loop bound from 4096 to `nsamp`; reran and compared all current outputs | 33/33 model, CSim, and cosim exact PASS; II=2 FAIL; same-bin 8,764 cycles; 9.060 ns clock PASS |
+| v6 | Recorded the existing bad-CONFIG and no-first-word behavior as requirements; no kernel change, so no checks were rerun | v5 results stand |
