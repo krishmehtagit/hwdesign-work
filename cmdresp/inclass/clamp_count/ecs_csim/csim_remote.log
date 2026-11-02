@@ -1,0 +1,79 @@
+clamp_count_source:
+    clamp_count.py
+    UP-TO-DATE
+scenarios_source:
+    scenarios.py
+    UP-TO-DATE
+gen_include:
+    include
+    RUNNING...
+    PASSED
+sources:
+    clamp_count_body_impl.tpp
+    RUNNING...
+    PASSED
+scenarios:
+    data/scenarios.txt
+    RUNNING...
+    PASSED
+gen_kernel:
+    gen/clamp_count.hpp
+    gen/clamp_count.cpp
+    clamp_count_body_impl.tpp
+    RUNNING...
+    PASSED
+csim:
+    results/csim_done.txt
+    RUNNING...
+0 unread_words=0
+w32 scenario reconfig_resets_count halted=0 error=0 tx_id=0 unread_words=0
+w32 scenario nsamp_1          halted=0 error=0 tx_id=0 unread_words=0
+w32 scenario nsamp_1024       halted=0 error=0 tx_id=0 unread_words=0
+w32 scenario equal_bounds_nan_negzero halted=0 error=0 tx_id=0 unread_words=0
+w32 scenario unknown_command  halted=1 error=3 tx_id=16 unread_words=0
+w32 scenario fresh_after_unknown halted=0 error=0 tx_id=0 unread_words=0
+w32 scenario data_before_config halted=1 error=4 tx_id=17 unread_words=1
+w32 scenario fresh_after_data_before_config halted=0 error=0 tx_id=0 unread_words=0
+w32 scenario count_before_config halted=1 error=4 tx_id=18 unread_words=0
+w32 scenario fresh_after_count_before_config halted=0 error=0 tx_id=0 unread_words=0
+w32 scenario bad_config_nan   halted=1 error=5 tx_id=19 unread_words=0
+w32 scenario fresh_after_bad_config halted=0 error=0 tx_id=0 unread_words=0
+w32 scenario bad_nsamp_zero   halted=1 error=5 tx_id=20 unread_words=0
+w32 scenario fresh_after_bad_nsamp halted=0 error=0 tx_id=0 unread_words=0
+w32 scenario early_tlast      halted=1 error=1 tx_id=21 unread_words=4
+w32 scenario fresh_after_early_tlast halted=0 error=0 tx_id=0 unread_words=0
+w32 scenario missing_tlast    halted=1 error=2 tx_id=23 unread_words=4
+w32 scenario fresh_after_missing_tlast halted=0 error=0 tx_id=0 unread_words=0
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 1036
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:10; Allocated memory: 0.000 MB.
+WAVEFLOW_SUCCESS: clamp_count C simulation passed.
+INFO: [HLS 200-112] Total CPU user time: 8.26 seconds. Total CPU system time: 1.2 seconds. Total elapsed time: 14.85 seconds; peak allocated memory: 286.312 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 17s
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.
+
+    PASSED
+check_csim:
+    results/check_csim.json
+    RUNNING...
+    csim   w32/worked_example   PASS
+    csim   w32/reconfig_resets_count PASS
+    csim   w32/nsamp_1          PASS
+    csim   w32/nsamp_1024       PASS
+    csim   w32/equal_bounds_nan_negzero PASS
+    csim   w32/unknown_command  PASS
+    csim   w32/fresh_after_unknown PASS
+    csim   w32/data_before_config PASS
+    csim   w32/fresh_after_data_before_config PASS
+    csim   w32/count_before_config PASS
+    csim   w32/fresh_after_count_before_config PASS
+    csim   w32/bad_config_nan   PASS
+    csim   w32/fresh_after_bad_config PASS
+    csim   w32/bad_nsamp_zero   PASS
+    csim   w32/fresh_after_bad_nsamp PASS
+    csim   w32/early_tlast      PASS
+    csim   w32/fresh_after_early_tlast PASS
+    csim   w32/missing_tlast    PASS
+    csim   w32/fresh_after_missing_tlast PASS
+    PASSED

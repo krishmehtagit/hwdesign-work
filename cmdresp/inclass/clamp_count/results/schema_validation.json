@@ -1,0 +1,30 @@
+{
+  "schema_name": "ClampCountCmdHdr",
+  "input_path": "/Users/krishmehta/Desktop/6463/hwdesign-work/cmdresp/inclass/clamp_count/clamp_count.py",
+  "ok": true,
+  "summary": "Schema is valid with 1 warning.",
+  "errors": [],
+  "warnings": [
+    {
+      "message": "Multiple schema classes were found. schema_info describes the first discovered schema class.",
+      "code": "multiple_schema_classes",
+      "location": {
+        "line": 87,
+        "column": null,
+        "path": "/Users/krishmehta/Desktop/6463/hwdesign-work/cmdresp/inclass/clamp_count/clamp_count.py"
+      }
+    }
+  ],
+  "schema_info": {
+    "name": "ClampCountCmdHdr",
+    "kind": "DataList",
+    "field_count": 5,
+    "field_names": [
+      "cmd_type",
+      "tx_id",
+      "nsamp",
+      "lo",
+      "hi"
+    ]
+  }
+}

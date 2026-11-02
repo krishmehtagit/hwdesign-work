@@ -1,0 +1,15 @@
+{"id": "88894c320794", "parent": null, "kind": "mcp", "name": "waveflow_list_examples", "start": 1793554940.096836, "pid": 13565, "elapsed": 0.9115695839282125, "end": 1793554941.0084057, "ok": true}
+{"id": "e19bce97b0a7", "parent": null, "kind": "mcp", "name": "waveflow_list_frames", "start": 1793554942.345906, "pid": 13565, "elapsed": 0.0008934580255299807, "end": 1793554942.3467994, "ok": true}
+{"id": "52f66c05fa53", "parent": null, "kind": "mcp", "name": "waveflow_get_example", "start": 1793554948.1322381, "pid": 13565, "elapsed": 5.262484773993492e-05, "end": 1793554948.1322908, "ok": true}
+{"id": "b39da0626007", "parent": null, "kind": "mcp", "name": "waveflow_get_process", "start": 1793554949.7695239, "pid": 13565, "elapsed": 0.003207458183169365, "end": 1793554949.7727313, "ok": true}
+{"id": "da450692ec33", "parent": null, "kind": "mcp", "name": "waveflow_get_example", "start": 1793554960.481111, "pid": 13565, "elapsed": 0.0005101249553263187, "end": 1793554960.4816213, "ok": true}
+{"id": "f099b8217bd6", "parent": null, "kind": "mcp", "name": "waveflow_get_example", "start": 1793554960.487728, "pid": 13565, "elapsed": 0.00033204210922122, "end": 1793554960.4880602, "ok": true}
+{"id": "37a31c81f167", "parent": null, "kind": "mcp", "name": "waveflow_get_example", "start": 1793554960.4924722, "pid": 13565, "elapsed": 0.0004241249989718199, "end": 1793554960.4928963, "ok": true}
+{"id": "aa872d69d80a", "parent": null, "kind": "mcp", "name": "waveflow_get_example", "start": 1793554960.497558, "pid": 13565, "elapsed": 0.0003315000794827938, "end": 1793554960.4978895, "ok": true}
+{"id": "cae1fc89c57e", "parent": null, "kind": "mcp", "name": "waveflow_get_example", "start": 1793554960.5024588, "pid": 13565, "elapsed": 0.00032674986869096756, "end": 1793554960.5027854, "ok": true}
+{"id": "ede83a3a76e5", "parent": null, "kind": "mcp", "name": "waveflow_get_doc", "start": 1793554961.572156, "pid": 13565, "elapsed": 0.0023969169706106186, "end": 1793554961.5745528, "ok": true}
+{"id": "445dd6597ad9", "parent": null, "kind": "mcp", "name": "waveflow_get_doc", "start": 1793554961.5797708, "pid": 13565, "elapsed": 0.00029775011353194714, "end": 1793554961.5800686, "ok": true}
+{"id": "943639db1d00", "parent": null, "kind": "mcp", "name": "waveflow_get_doc", "start": 1793554961.5839849, "pid": 13565, "elapsed": 0.0002598338760435581, "end": 1793554961.5842447, "ok": true}
+{"id": "d81fc80e2d2c", "parent": null, "kind": "mcp", "name": "waveflow_new_accel_project", "start": 1793554966.8995268, "pid": 13565, "elapsed": 0.0007527079433202744, "end": 1793554966.9002795, "ok": true}
+{"id": "a333660856b7", "parent": null, "kind": "mcp", "name": "waveflow_new_accel_project", "start": 1793554970.1060631, "pid": 13565, "elapsed": 0.012102499837055802, "end": 1793554970.1181657, "ok": true}
+{"id": "331f67f4e959", "parent": null, "kind": "mcp", "name": "validate_schema_from_file", "start": 1793555167.7957718, "pid": 13565, "elapsed": 0.023447874933481216, "end": 1793555167.8192198, "ok": true}

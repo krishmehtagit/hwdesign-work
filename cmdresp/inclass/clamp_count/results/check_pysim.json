@@ -1,0 +1,20 @@
+{
+  "w32/worked_example": [],
+  "w32/reconfig_resets_count": [],
+  "w32/nsamp_1": [],
+  "w32/nsamp_1024": [],
+  "w32/equal_bounds_nan_negzero": [],
+  "w32/unknown_command": [],
+  "w32/fresh_after_unknown": [],
+  "w32/data_before_config": [],
+  "w32/fresh_after_data_before_config": [],
+  "w32/count_before_config": [],
+  "w32/fresh_after_count_before_config": [],
+  "w32/bad_config_nan": [],
+  "w32/fresh_after_bad_config": [],
+  "w32/bad_nsamp_zero": [],
+  "w32/fresh_after_bad_nsamp": [],
+  "w32/early_tlast": [],
+  "w32/fresh_after_early_tlast": [],
+  "w32/fresh_after_missing_tlast": []
+}
