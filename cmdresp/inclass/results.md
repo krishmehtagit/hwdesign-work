@@ -26,17 +26,17 @@ The Waveflow `stream_inband` accelerator is implemented in `clamp_count/`. The f
 
 ## Error status
 
-C-simulation status registers for each error scenario, read from `clamp_count/ecs_csim/data/w32/<scenario>/csim/status.json`. The model's `model/status.json` and `expected_status.json` match in every row. Each fresh activation afterward reports `halted=0`, `error=0`, `tx_id=0`.
+Status registers for each error scenario. Expected values are from `clamp_count/ecs_csim/data/w32/<scenario>/expected_status.json`, and observed C-simulation values are from `clamp_count/ecs_csim/data/w32/<scenario>/csim/status.json`. The model's `model/status.json` matches in every row. Each fresh activation afterward reports `halted=0`, `error=0`, `tx_id=0`.
 
-| Error scenario | Error | halted | error | tx_id | Fresh activation | Fresh result |
-| --- | --- | --- | --- | --- | --- | --- |
-| unknown_command | `UNKNOWN_COMMAND` | 1 | 3 | 16 | fresh_after_unknown | PASS |
-| data_before_config | `NOT_CONFIGURED` | 1 | 4 | 17 | fresh_after_data_before_config | PASS |
-| count_before_config | `NOT_CONFIGURED` | 1 | 4 | 18 | fresh_after_count_before_config | PASS |
-| bad_config_nan | `BAD_PARAM` | 1 | 5 | 19 | fresh_after_bad_config | PASS |
-| bad_nsamp_zero | `BAD_PARAM` | 1 | 5 | 20 | fresh_after_bad_nsamp | PASS |
-| early_tlast | Early TLAST | 1 | 1 | 21 | fresh_after_early_tlast | PASS |
-| missing_tlast | Missing TLAST | 1 | 2 | 23 | fresh_after_missing_tlast | PASS |
+| Error scenario | Error | Expected halted | Expected error | Expected tx_id | Observed halted | Observed error | Observed tx_id | Fresh activation | Fresh result |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| unknown_command | `UNKNOWN_COMMAND` | 1 | 3 | 16 | 1 | 3 | 16 | fresh_after_unknown | PASS |
+| data_before_config | `NOT_CONFIGURED` | 1 | 4 | 17 | 1 | 4 | 17 | fresh_after_data_before_config | PASS |
+| count_before_config | `NOT_CONFIGURED` | 1 | 4 | 18 | 1 | 4 | 18 | fresh_after_count_before_config | PASS |
+| bad_config_nan | `BAD_PARAM` | 1 | 5 | 19 | 1 | 5 | 19 | fresh_after_bad_config | PASS |
+| bad_nsamp_zero | `BAD_PARAM` | 1 | 5 | 20 | 1 | 5 | 20 | fresh_after_bad_nsamp | PASS |
+| early_tlast | Early TLAST | 1 | 1 | 21 | 1 | 1 | 21 | fresh_after_early_tlast | PASS |
+| missing_tlast | Missing TLAST | 1 | 2 | 23 | 1 | 2 | 23 | fresh_after_missing_tlast | PASS |
 
 ## C simulation
 
