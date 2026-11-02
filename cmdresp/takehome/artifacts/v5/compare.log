@@ -1,0 +1,40 @@
+Bit-for-bit comparison of artifacts/v5/w32 against the expected bundles (33 scenarios).
+Compared per stage: words.bin, tlast.bin, bounds.bin, status.json.
+
+hand_edges                                   model=PASS csim=PASS cosim=PASS
+nbins_256_edges                              model=PASS csim=PASS cosim=PASS
+nsamp_1                                      model=PASS csim=PASS cosim=PASS
+same_bin_4096                                model=PASS csim=PASS cosim=PASS
+clear                                        model=PASS csim=PASS cosim=PASS
+header_early                                 model=PASS csim=PASS cosim=PASS
+header_missing                               model=PASS csim=PASS cosim=PASS
+unknown_command                              model=PASS csim=PASS cosim=PASS
+data_before_config                           model=PASS csim=PASS cosim=PASS
+read_before_config                           model=PASS csim=PASS cosim=PASS
+bad_nbins_zero                               model=PASS csim=PASS cosim=PASS
+bad_nbins_257                                model=PASS csim=PASS cosim=PASS
+bad_shift_16                                 model=PASS csim=PASS cosim=PASS
+bad_nsamp_zero                               model=PASS csim=PASS cosim=PASS
+bad_nsamp_4097                               model=PASS csim=PASS cosim=PASS
+data_early                                   model=PASS csim=PASS cosim=PASS
+data_missing                                 model=PASS csim=PASS cosim=PASS
+priority_header_unknown                      model=PASS csim=PASS cosim=PASS
+priority_no_config_bad_nsamp                 model=PASS csim=PASS cosim=PASS
+fresh_after_header_early                     model=PASS csim=PASS cosim=PASS
+fresh_after_header_missing                   model=PASS csim=PASS cosim=PASS
+fresh_after_unknown_command                  model=PASS csim=PASS cosim=PASS
+fresh_after_data_before_config               model=PASS csim=PASS cosim=PASS
+fresh_after_read_before_config               model=PASS csim=PASS cosim=PASS
+fresh_after_bad_nbins_zero                   model=PASS csim=PASS cosim=PASS
+fresh_after_bad_nbins_257                    model=PASS csim=PASS cosim=PASS
+fresh_after_bad_shift_16                     model=PASS csim=PASS cosim=PASS
+fresh_after_bad_nsamp_zero                   model=PASS csim=PASS cosim=PASS
+fresh_after_bad_nsamp_4097                   model=PASS csim=PASS cosim=PASS
+fresh_after_data_early                       model=PASS csim=PASS cosim=PASS
+fresh_after_data_missing                     model=PASS csim=PASS cosim=PASS
+fresh_after_priority_header_unknown          model=PASS csim=PASS cosim=PASS
+fresh_after_priority_no_config_bad_nsamp     model=PASS csim=PASS cosim=PASS
+
+Result: 99/99 stage comparisons exact; 0 mismatches.
+
+hand_edges: READ [2, 1, 0, 1, 1, 1] matches the hand result [2, 1, 0, 1, 1, 1] and np.bincount [2, 1, 0, 1, 1, 1].
