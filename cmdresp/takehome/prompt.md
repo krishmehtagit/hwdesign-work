@@ -57,6 +57,9 @@ co-simulation once: one testbench run that walks through every scenario in
 order, calling the kernel once per activation with fresh streams, including
 each error activation and the fresh activation after it.
 
+Error codes: 1 early header TLAST, 2 missing header TLAST, 3 unknown command, 4 DATA or READ before CONFIG, 5 bad parameter, 6 early data TLAST, 7 missing data TLAST.
+Run every scenario in the Python model, C simulation and co-simulation. Report accepted samples per clock from co-simulation.
+
 ## results.md
 Write results.md with these sections:
 - Interface: the command and response layouts, how values pack into words,
@@ -88,3 +91,4 @@ this folder to be committed: a reviewer opens them to check results.md.
 | --- | --- | --- |
 | 1 | First version | |
 |2|commands section| 2nd for llm grader fix|
+| 3 | Every scenario runs in the model, C simulation and co-simulation and error codes 1 to 7 are fixed | Run 1 left these in Open Items and co-simulated only the timing scenario |
