@@ -25,7 +25,7 @@ x sample, we are supposed to compute a width that cannot overflow. So if the off
 Every successful CONFIG clears all bins, below and above.
 
 ## Requirements
-A few requirements that we should keep in mind is sample and LO are signed 16-bit and counts are assigned unsigned 32-bit. The ACI-4 stream words are 32-bit. Each word carries one sample in its lower 16 bits and the upper 16 bits are just ignored. Largest sizes for N bins is 256 and N samp up to 4096 in one data command. A throughput target is one sample per clock during data burst, measured in co simulation on a 4096 sample burst where every sample lands in the same bin. And our consecutive samples in the same bin must still be counted correctly. One sample per clock means one input word accepted per clock from the first sample to the last sample. Our clock target is what is estimated a clock should be under 10 nanoseconds. There is no latency or resource target, so CONFIG may stall the input while it clears the count, but it's fine.
+A few requirements that we should keep in mind is sample and LO are signed 16-bit and counts are assigned unsigned 32-bit. The ACI-4 stream words are 32-bit. Each word carries one sample in its lower 16 bits and the upper 16 bits are just ignored. Largest sizes for N bins is 256 and N samp up to 4096 in one data command. A throughput target is one sample per clock during data burst, measured in co simulation on a 4096 sample burst where every sample lands in the same bin. And our consecutive samples in the same bin must still be counted correctly. One sample per clock means one input word accepted per clock from the first sample to the last sample. Our clock target is what is estimated a clock should be under 10 nanoseconds. There is no latency or resource target, so CONFIG may stall the input while it clears the count, but it's fine.Same bin throughput of 0.5 accepted samples per clock (II=2) is accepted, one sample per clock is a thing that is required.
 
 ## Commands and parameters
 For each of our command headers is one fixed length burst ending in tlast, and it carries a txid. Each response will start with a response header, a burst ending with tlast that carries the command's txid and nwords, the number of data words after it.
@@ -95,8 +95,9 @@ this folder to be committed: a reviewer opens them to check results.md.
 | Version | Change | Why |
 | --- | --- | --- |
 | 1 | First version | |
-|2|commands section| 2nd for llm grader fix, Run 1 built them|
+| 2 | Commands and valid values section | Prompt gave no command list, so run 1 would have guessed them, run 1 built this list, its fix after llm grader asks for it |
 | 3 | All scenarios in every check; error codes 1 to 7 | Run 1 Open Items |
-| 4 | DATA loops nsamp times, no response on sample TLAST errors, new CONFIG and two-error tests | Problems found in run 2 |
+| 4 | DATA loops nsamp times and no response on sample TLAST errors; new CONFIG and added two error tests | Run 2 took 8,763 cycles for 1-sample DATA, sent a header before errors 6 and 7 and reused CONFIG values |
 | 5 | DATA loop bound fixed | Run 3 still looped to 4096 |
 | 6 | Invalid CONFIG and no first header word settled | Run 4 Assumptions, I kept its choices |
+| 7 | Same bin throughput of 0.5 samples per clock is now accepted | Run 4 achieved II=2 rather than the required II=1, and the prompt now records the accepted throughput |

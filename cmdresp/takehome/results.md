@@ -27,15 +27,17 @@ is why Vitis scheduled II=2; no timing-closure rework was attempted.
 
 | Target | Required | Measured | PASS/FAIL | Source |
 | --- | --- | --- | --- | --- |
-| Same-bin accepted samples/clock | 1.0 | 0.5 (II=2) | **FAIL** | [synth_cosim_v5.log](artifacts/v5/synth_cosim_v5.log) |
+| Same-bin accepted samples/clock | 0.5 (prompt v7); originally 1.0, which was missed | 0.5 (2.0 cycles per sample) | **PASS** against v7 | [result.transaction.rpt](artifacts/v5/result.transaction.rpt), [synth_cosim_v5.log](artifacts/v5/synth_cosim_v5.log) |
 | Same-bin cosim latency | no target | 8,764 cycles (transaction 3) | PASS | [result.transaction.rpt](artifacts/v5/result.transaction.rpt) |
 | Full-suite cosim latency | no target | min/avg/max 9 / 634 / 8,764 cycles | PASS | [histogram_cosim.rpt](artifacts/v5/histogram_cosim.rpt) |
 | Estimated clock | under 10 ns | 9.060 ns | **PASS** | [histogram_csynth.rpt](artifacts/v5/histogram_csynth.rpt) |
 | Resources | no target | 1 BRAM18K, 0 DSP, 969 FF, 1,546 LUT | PASS | [histogram_csynth.rpt](artifacts/v5/histogram_csynth.rpt) |
 
-The accepted-samples/clock value is the achieved synthesis II inverted; the
-full-suite cosim report measures only activation intervals, not per-beat
-acceptance.  The 2.70 ns clock-uncertainty warning does not alter the required
+The accepted-samples/clock value is measured from co-simulation: `nsamp_1`
+(transaction 2, 574 cycles) and `same_bin_4096` (transaction 3, 8,764 cycles)
+have the same command sequence with 1 and 4096 samples, so the 4095 extra
+samples took 8,190 cycles, or 2.0 cycles per sample.  This agrees with the
+synthesis II of 2.  The 2.70 ns clock-uncertainty warning does not alter the required
 under-10-ns estimated-clock PASS.
 
 ## Verification
@@ -105,7 +107,8 @@ The saved intent, expected, model, CSim, and cosim bundles are in
 
 ## Open Items
 
-The throughput target is **FAIL** (achieved II=2).  No other open items.
+None.  The original target of 1.0 sample per clock was missed (II=2); prompt v7
+accepts 0.5 samples per clock.
 
 ## Run History
 
@@ -116,3 +119,4 @@ The throughput target is **FAIL** (achieved II=2).  No other open items.
 | v4 | DATA TLAST errors suppress DATA responses; second CONFIG changes all configuration fields; added combined-error precedence tests | 33/33 model, CSim, and cosim exact PASS; II=2 FAIL; 9.060 ns clock PASS |
 | v5 | Changed only DATA-loop bound from 4096 to `nsamp`; reran and compared all current outputs | 33/33 model, CSim, and cosim exact PASS; II=2 FAIL; same-bin 8,764 cycles; 9.060 ns clock PASS |
 | v6 | Recorded the existing bad-CONFIG and no-first-word behavior as requirements; no kernel change, so no checks were rerun | v5 results stand |
+| v7 | Accepted the measured 0.5 samples per clock; reported it from co-simulation transactions; no kernel change, so no checks were rerun | v5 results stand |
