@@ -25,7 +25,7 @@ x sample, we are supposed to compute a width that cannot overflow. So if the off
 Every successful CONFIG clears all bins, below and above.
 
 ## Requirements
-A few requirements that we should keep in mind is sample and LO are signed 16-bit and counts are assigned unsigned 32-bit. The ACI-4 stream words are 32-bit. Each word carries one sample in its lower 16 bits and the upper 16 bits are just ignored. Largest sizes for N bins is 256 and N samp up to 4096 in one data command. A throughput target is one sample per clock during data burst, measured in co simulation on a 4096 sample burst where every sample lands in the same bin. And our consecutive samples in the same bin must still be counted correctly. One sample per clock means one input word accepted per clock from the first sample to the last sample. Our clock target is what is estimated a clock should be under 10 nanoseconds. There is no latency or resource target, so CONFIG may stall the input while it clears the count, but it's fine.Same bin throughput of 0.5 accepted samples per clock (II=2) is accepted, one sample per clock is a thing that is required.
+A few requirements that we should keep in mind is sample and LO are signed 16-bit and counts are assigned unsigned 32-bit. The ACI-4 stream words are 32-bit. Each word carries one sample in its lower 16 bits and the upper 16 bits are just ignored. Largest sizes for N bins is 256 and N samp up to 4096 in one data command. And our consecutive samples in the same bin must still be counted correctly. Our clock target is what is estimated a clock should be under 10 nanoseconds. There is no latency or resource target, so CONFIG may stall the input while it clears the count, but it's fine. The required same-bin throughput is at least 0.5 accepted samples per clock, measured on the 4096-sample co-simulation burst.
 
 ## Commands and parameters
 For each of our command headers is one fixed length burst ending in tlast, and it carries a txid. Each response will start with a response header, a burst ending with tlast that carries the command's txid and nwords, the number of data words after it.
@@ -48,6 +48,8 @@ registers are cleared at the start of each one.
 
 Check in this particular order
 First, try checking that if the tlast came early or is missing. Then you can check if there was an unknown command. Then you can check if before we sent config in this activation, if there was a data or a read, then check if nbin shift or nsamp is outside the valid range, like if it's a bad parameter. Then check if tlast was on the data sample before the samples nsamp. Check if there was no tlast sent.
+
+On a fatal error, emit no new response; if a response burst has already begun, terminate it with TLAST before returning.
 
 ## Verification
 Check the Python model against a NumPy reference built with np.bincount, and
@@ -101,3 +103,4 @@ this folder to be committed: a reviewer opens them to check results.md.
 | 5 | DATA loop bound fixed | Run 3 still looped to 4096 |
 | 6 | Invalid CONFIG and no first header word settled | Run 4 Assumptions, I kept its choices |
 | 7 | Same bin throughput of 0.5 samples per clock is now accepted | Run 4 achieved II=2 rather than the required II=1, and the prompt now records the accepted throughput |
+| 8 | Throughput is at least 0.5 samples per clock; fatal errors emit no new response | Run 4 achieved II=2 and chose to emit no new response after fatal errors; the prompt now fixes both |

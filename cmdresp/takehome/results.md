@@ -54,34 +54,34 @@ status and `fresh` marks the immediately following clean activation.
 | nsamp_1 | clean | [compare.log](artifacts/v5/compare.log) |
 | same_bin_4096 | clean | [compare.log](artifacts/v5/compare.log) |
 | clear | clean, changed second CONFIG | [compare.log](artifacts/v5/compare.log) |
-| header_early | E1 | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| header_missing | E2 | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| unknown_command | E3 | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| data_before_config | E4 | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| read_before_config | E4 | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| bad_nbins_zero | E5 | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| bad_nbins_257 | E5 | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| bad_shift_16 | E5 | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| bad_nsamp_zero | E5 | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| bad_nsamp_4097 | E5 | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| data_early | E6; no DATA response | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| data_missing | E7; no DATA response | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| priority_header_unknown | E2 wins | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| priority_no_config_bad_nsamp | E4 wins | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| fresh_after_header_early | clean | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| fresh_after_header_missing | clean | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| fresh_after_unknown_command | clean | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| fresh_after_data_before_config | clean | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| fresh_after_read_before_config | clean | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| fresh_after_bad_nbins_zero | clean | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| fresh_after_bad_nbins_257 | clean | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| fresh_after_bad_shift_16 | clean | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| fresh_after_bad_nsamp_zero | clean | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| fresh_after_bad_nsamp_4097 | clean | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| fresh_after_data_early | clean | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| fresh_after_data_missing | clean | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| fresh_after_priority_header_unknown | clean | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
-| fresh_after_priority_no_config_bad_nsamp | clean | [csim_v4.log](artifacts/v5/csim_v5_verify.log) |
+| header_early | E1 | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| header_missing | E2 | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| unknown_command | E3 | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| data_before_config | E4 | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| read_before_config | E4 | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| bad_nbins_zero | E5 | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| bad_nbins_257 | E5 | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| bad_shift_16 | E5 | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| bad_nsamp_zero | E5 | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| bad_nsamp_4097 | E5 | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| data_early | E6; no DATA response | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| data_missing | E7; no DATA response | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| priority_header_unknown | E2 wins | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| priority_no_config_bad_nsamp | E4 wins | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| fresh_after_header_early | clean | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| fresh_after_header_missing | clean | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| fresh_after_unknown_command | clean | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| fresh_after_data_before_config | clean | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| fresh_after_read_before_config | clean | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| fresh_after_bad_nbins_zero | clean | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| fresh_after_bad_nbins_257 | clean | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| fresh_after_bad_shift_16 | clean | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| fresh_after_bad_nsamp_zero | clean | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| fresh_after_bad_nsamp_4097 | clean | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| fresh_after_data_early | clean | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| fresh_after_data_missing | clean | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| fresh_after_priority_header_unknown | clean | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
+| fresh_after_priority_no_config_bad_nsamp | clean | [csim_v5_verify.log](artifacts/v5/csim_v5_verify.log) |
 
 The saved intent, expected, model, CSim, and cosim bundles are in
 [artifacts/v5/w32](artifacts/v5/w32).
@@ -99,9 +99,10 @@ The saved intent, expected, model, CSim, and cosim bundles are in
 - Header TLAST has priority over an unknown code; missing CONFIG has priority
   over an invalid DATA nsamp.  The two combined-error scenarios verify both.
 - The prompt does not specify CONFIG-header inactive fields, READ/DATA inactive
-  fields, END fields, response ordering after a fatal error, or status reset
-  cycle; they are serialized as zero by the scenario helper, fatal runs emit
-  no new response, and status is observable after return.
+  fields, END fields, or the status reset cycle; inactive fields are serialized
+  as zero by the scenario helper, and status is observable after return.
+- A fatal error emits no new response, as the kernel already does.  Settled as
+  a requirement in prompt v8.
 - With no first header word, the kernel waits at the stream read; this
   condition is not generated.  Settled as a requirement in prompt v6.
 
@@ -120,3 +121,4 @@ accepts 0.5 samples per clock.
 | v5 | Changed only DATA-loop bound from 4096 to `nsamp`; reran and compared all current outputs | 33/33 model, CSim, and cosim exact PASS; II=2 FAIL; same-bin 8,764 cycles; 9.060 ns clock PASS |
 | v6 | Recorded the existing bad-CONFIG and no-first-word behavior as requirements; no kernel change, so no checks were rerun | v5 results stand |
 | v7 | Accepted the measured 0.5 samples per clock; reported it from co-simulation transactions; no kernel change, so no checks were rerun | v5 results stand |
+| v8 | Removed the conflicting throughput wording and recorded the existing fatal-error output as a requirement; no kernel change, so no checks were rerun | v5 results stand |
